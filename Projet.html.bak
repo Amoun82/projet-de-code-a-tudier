@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+		<link href="styles/default.css" rel="stylesheet">
+        <title>Correction</title>
+    </head>
+    <body>
+		<style>
+		
+		</style>
+		
+	
+		<table>
+            <tr>
+                <th>Titre 1</th>
+                <th>Titre 2</th>
+                <th>Titre 3</th>
+            </tr>
+            <tr>
+                <td>Cellule simple</td>
+                <td>Cellule simple</td>
+                <td>Cellule simple</td>
+            </tr>
+            <tr>
+                <td colspan="2">Deux colonnes assemblées</td>
+                <td>Cellule simple</td>
+            </tr>
+            <tr>
+                <td>Cellule simple</td>
+                <td>Cellule simple</td>
+                <td rowspan="2">Deux lignes assemblées avec alignement verticle en haut</td>
+            </tr>
+            <tr>
+                <td>Cellule simple</td>
+                <td>Cellule simple</td>
+            </tr>
+            <tr>
+                <td>Cellule simple</td>
+                <td colspan="2" rowspan="2" id="cellule">Deux lignes assemblées, deux colonnes assemblées</td>
+            </tr>
+            <tr>
+                <td>Cellule simple</td>
+            </tr>
+			
+			
+        </table>
+		<script>
+			const cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
+			let info = 'My cats are called ';
+			const para = document.querySelector('p');
+
+			for(let i = 0; i < cats.length; i++) {
+			info += cats[i] + ', ';
+			}
+
+			para.textContent = info;
+
+    
+		
+		</script>
+        </body>
+</html>

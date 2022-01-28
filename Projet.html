@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+    <head>
+		<link href="styles/default.css" rel="stylesheet">
+        <meta charset="utf-8">
+		<title>Correction</title>
+		
+		<style>
+				html {
+				width: 100%;
+				height: inherit;
+			  }
+
+			  canvas {
+				display: block;
+			  }
+
+			  body {
+				margin: 0;
+			  }
+
+			  button {
+				position: absolute;
+				top: 5px;
+				left: 5px;
+			  }
+		
+		</style>
+		
+    </head>
+    <body>
+		<style>
+		
+		</style>
+			
+		<table>
+            <tr>
+                <th>Titre 1</th>
+                <th>Titre 2</th>
+                <th>Titre 3</th>
+            </tr>
+            <tr>
+                <td>Cellule simple</td>
+                <td>Cellule simple</td>
+                <td>Cellule simple</td>
+            </tr>
+            <tr>
+                <td colspan="2">Deux colonnes assemblées</td>
+                <td>Cellule simple</td>
+            </tr>
+            <tr>
+                <td>Cellule simple</td>
+                <td>Cellule simple</td>
+                <td rowspan="2">Deux lignes assemblées avec alignement verticle en haut</td>
+            </tr>
+            <tr>
+                <td>Cellule simple</td>
+                <td>Cellule simple</td>
+            </tr>
+            <tr>
+                <td>Cellule simple</td>
+                <td colspan="2" rowspan="2" id="cellule">Deux lignes assemblées, deux colonnes assemblées</td>
+            </tr>
+            <tr>
+                <td>Cellule simple</td>
+            </tr>
+			
+			
+        </table><p></p>
+		
+		<script>
+			for (let i = 0; i < 100; i++) {
+			ctx.beginPath();
+			ctx.fillStyle = 'rgba(255,0,0,0.5)';
+			ctx.arc(random(WIDTH), random(HEIGHT), random(50), 0, 2 * Math.PI);
+			ctx.fill();
+			}
+		
+		</script>
+		<script>
+			const cats = ["Bill", "Jeff", "Pete", "Biggles", "Jasmin"];
+			let info = 'My cats are called ';
+			const para = document.querySelector('p');
+
+			for(let i = 0; i < cats.length; i++) {
+			info += cats[i] + ', ';
+			}
+
+			para.textContent = info;
+
+    
+		
+		</script>
+		
+		<FORM>
+			<INPUT TYPE=BUTTON 
+			VALUE="Cliquez ici !"
+			 onClick="PetiteFenetre()">
+		</FORM>
+		
+		
+		<SCRIPT language="JavaScript">
+			function PetiteFenetre() {
+			   msg=open("","DisplayWindow","width=450,height=350");
+			   msg.document.write("<P>Pour un affichage rapide, <BR>le texte de cettefenêtre " +
+			   "ne provient pas<BR>d'un autre document HTML.<BR>Il est " +
+			   "généré par du code JavaScript.<CENTER><BR><FORM>" +
+			   "<input type=button value='Fermer' onClick='window.close()'>" +
+			   "</form></CENTER><HR><P ALIGN=CENTER>Pour fermer la fenêtre " +
+			   "avec un bouton<BR>on choisit ici d'utiliser HTML. la fonction " +
+			   "<SPAN CLASS=Code>window.close()</SPAN><BR>est dans la déclaration du formulaire " +
+			   "intégrant le bouton&nbsp;:<P ALIGN=CENTER><SPAN CLASS=Code>Message.document" +
+			   ".write(&quot;&lt;FORM&gt;&nbsp;&lt;INPUT TYPE=&quot;BUTTON&quot;" +
+			   "<BR>VALUE='Fermer';&nbsp;onClick='window.close()'&gt;" +
+			   "&lt;/FORM&gt;&quot;)</P></SPAN>"); }
+			
+			</SCRIPT>
+		
+		
+		<button>Update</button>
+
+		<canvas></canvas>
+
+
+		<script>
+			const btn = document.querySelector('button');
+			const canvas = document.querySelector('canvas');
+			const ctx = canvas.getContext('2d');
+
+			let WIDTH = document.documentElement.clientWidth;
+			let HEIGHT = document.documentElement.clientHeight;
+
+			canvas.width = WIDTH;
+			canvas.height = HEIGHT;
+
+			function random(number) {
+			  return Math.floor(Math.random()*number);
+			}
+
+			function draw() {
+			  ctx.clearRect(0,0,WIDTH,HEIGHT);
+			  for(let i = 0; i < 100; i++) {
+				ctx.beginPath();
+				ctx.fillStyle = 'rgba(255,0,0,0.5)';
+				ctx.arc(random(WIDTH), random(HEIGHT), random(50), 0, 2 * Math.PI);
+				ctx.fill();
+			  }
+			}
+
+			btn.addEventListener('click',draw);
+
+		</script>
+        </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+    <head>
+		<link href="styles/default.css" rel="stylesheet">
+		<meta charset="utf-8">
+        <title>test</title>
+		<style>
+				html {
+				width: 100%;
+				height: inherit;
+				}
+
+				canvas {
+					display: block;
+				}
+
+				body {
+					margin: 0;
+				}
+
+				button {
+					position: absolute;
+					top: 40px;
+					left: 160px;
+				}
+		
+		</style>
+    </head>
+    <body>
+				
+		<p></p>
+		
+		<script>
+			for (let i = 0; i < 100; i++) {
+			ctx.beginPath();
+			ctx.fillStyle = 'rgba(255,0,0,0.5)';
+			ctx.arc(random(WIDTH), random(HEIGHT), random(50), 0, 2 * Math.PI);
+			ctx.fill();
+			}
+		
+		</script>
+		<script>
+			const cats = ["stef", "stephane", "antoine", "guillaume", "cédric", "éric", "romane", "marie"];
+			let info = 'mon exemple de tableau : ';
+			const para = document.querySelector('p');
+
+			for(let i = 0; i < cats.length; i++) {
+			info += cats[i] + ', ';
+			}
+
+			para.textContent = info;
+
+    
+		
+		</script>
+		
+		</br>
+		<FORM>
+			<INPUT TYPE=BUTTON VALUE="Cliquez ici !" onClick="PetiteFenetre()">
+		</FORM>
+		
+		
+		<SCRIPT language="JavaScript">
+			function PetiteFenetre() {
+			   msg=open("","DisplayWindow","width=500,height=500");
+			   msg.document.write("<P>Pour un affichage rapide, <BR>le texte de cettefenêtre " +
+			   "ne provient pas<BR>d'un autre document HTML.<BR>Il est " +
+			   "généré par du code JavaScript.<CENTER><BR><FORM>" +
+			   "<input type=button value='Fermer' onClick='window.close()'>" +
+			   "</form></CENTER><HR><P ALIGN=CENTER>Pour fermer la fenêtre " +
+			   "avec un bouton<BR>on choisit ici d'utiliser HTML. la fonction " +
+			   "<SPAN CLASS=Code>window.close()</SPAN><BR>est dans la déclaration du formulaire " +
+			   "intégrant le bouton&nbsp;:<P ALIGN=CENTER><SPAN CLASS=Code>Message.document" +
+			   ".write(&quot;&lt;FORM&gt;&nbsp;&lt;INPUT TYPE=&quot;BUTTON&quot;" +
+			   "<BR>VALUE='Fermer';&nbsp;onClick='window.close()'&gt;" +
+			   "&lt;/FORM&gt;&quot;)</P></SPAN>"); }
+			
+			</SCRIPT>
+		
+		</br>
+		<button>Update</button>
+
+		<canvas></canvas>
+
+
+		<script>
+			const btn = document.querySelector('button');
+			const canvas = document.querySelector('canvas');
+			const ctx = canvas.getContext('2d');
+
+			let WIDTH = document.documentElement.clientWidth;
+			let HEIGHT = document.documentElement.clientHeight;
+
+			canvas.width = WIDTH;
+			canvas.height = HEIGHT;
+
+			function random(number) {
+			  return Math.floor(Math.random()*number);
+			}
+
+			function draw() {
+			  ctx.clearRect(0,0,WIDTH,HEIGHT);
+			  for(let i = 0; i < 100; i++) {
+				ctx.beginPath();
+				ctx.fillStyle = 'rgba(255,0,0,0.5)';
+				ctx.arc(random(WIDTH), random(HEIGHT), random(50), 0, 2 * Math.PI);
+				ctx.fill();
+			  }
+			}
+
+			btn.addEventListener('click',draw);
+
+		</script>
+		
+        </body>
+</html>
